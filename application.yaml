@@ -9,6 +9,8 @@ spec:
     repoURL: https://github.com/mykPhilips/argo-cd.git
     targetRevision: main
     path: dev
+    repoAuthSecret:
+      name: argocd-github-secret
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
