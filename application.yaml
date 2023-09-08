@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kafka
-  namespace: default
+  name: myapp-demo
+  namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/mykPhilips/argo-cd.git
     targetRevision: HEAD
-    path: kafka
+    path: dev
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: myapp
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
